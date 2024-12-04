@@ -15,3 +15,22 @@ abstract class Soldado {
         this.defensa = defensa;
         this.reino = reino;
     }
+public String getNombre() { return nombre; }
+    public int getNivelVida() { return nivelVida; }
+    public void setNivelVida(int nivelVida) { this.nivelVida = nivelVida; }
+    public int getAtaque() { return ataque; }
+    public int getDefensa() { return defensa; }
+    public int getFila() { return fila; }
+    public void setFila(int fila) { this.fila = fila; }
+    public int getColumna() { return columna; }
+    public void setColumna(int columna) { this.columna = columna; }
+    public String getReino() { return reino; }
+
+    
+    public abstract String representar();
+
+   
+    public void aplicarBonus() {
+        this.nivelVida += 1;
+    }
+}
