@@ -302,7 +302,6 @@ class CaballeroMoro extends Caballero implements UnidadEspecial {
     public String representar() {
         return "CM";
     }
-}
 class Ejercito {
     private String reino;
     private List<Soldado> soldados;
