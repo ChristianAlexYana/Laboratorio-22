@@ -57,6 +57,12 @@ class Arquero extends Soldado {
         super(nombre, nivelVida, ataque, defensa, reino);
         this.flechasDisponibles = flechasDisponibles;
     }
+    public int getFlechasDisponibles() { return flechasDisponibles; }
+    public void setFlechasDisponibles(int flechasDisponibles) { this.flechasDisponibles = flechasDisponibles; }
+
+    public String representar() {
+        return "A";
+    }
 
     
 }
