@@ -63,6 +63,17 @@ class Arquero extends Soldado {
     public String representar() {
         return "A";
     }
+   
+}
+class Caballero extends Soldado {
+    private String arma; // "Espada" o "Lanza"
+    private boolean montado;
 
-    
+    public Caballero(String nombre, int nivelVida, int ataque, int defensa, String reino, String arma, boolean montado) {
+        super(nombre, nivelVida, ataque, defensa, reino);
+        this.arma = arma;
+        this.montado = montado;
+    }
+
+
 }
