@@ -265,3 +265,41 @@ class EspadachinConquistador extends Espadachin implements UnidadEspecial {
     }
 }
 
+class CaballeroMoro extends Caballero implements UnidadEspecial {
+    private int nivelEvolucion;
+    private int flechasDisponibles;
+    private double tamanoFlechas;
+
+    public CaballeroMoro(String nombre, int nivelVida, int ataque, int defensa, String reino, String arma, boolean montado) {
+        super(nombre, nivelVida, ataque, defensa, reino, arma, montado);
+        this.nivelEvolucion = 1;
+        this.flechasDisponibles = 6;
+        this.tamanoFlechas = 1.3;
+    }
+
+    public void habilidadEspecial() {
+        if (flechasDisponibles > 0) {
+            flechasDisponibles--;
+            System.out.println(nombre + " lanza una flecha. Flechas restantes: " + flechasDisponibles);
+        } else {
+            System.out.println(nombre + " no tiene flechas para lanzar.");
+        }
+    }
+
+    public int getNivelEvolucion() { return nivelEvolucion; }
+
+    public void evolucionar() {
+        if (nivelEvolucion < 4) {
+            nivelEvolucion++;
+            flechasDisponibles += 3;
+            tamanoFlechas += 0.4;
+            System.out.println(nombre + " ha evolucionado a nivel " + nivelEvolucion + ". Flechas disponibles: " + flechasDisponibles);
+        } else {
+            System.out.println(nombre + " ya ha alcanzado el máximo nivel de evolución.");
+        }
+    }
+
+    public String representar() {
+        return "CM";
+    }
+}
