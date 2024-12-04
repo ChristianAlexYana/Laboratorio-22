@@ -101,3 +101,8 @@ class Lancero extends Soldado {
         return "L";
     }
 }
+interface UnidadEspecial {
+    void habilidadEspecial();
+    int getNivelEvolucion();
+    void evolucionar();
+}
