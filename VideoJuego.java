@@ -74,6 +74,14 @@ class Caballero extends Soldado {
         this.arma = arma;
         this.montado = montado;
     }
+    public String getArma() { return arma; }
+    public void setArma(String arma) { this.arma = arma; }
 
+    public boolean isMontado() { return montado; }
+    public void setMontado(boolean montado) { this.montado = montado; }
+
+    public String representar() {
+        return "C";
+    }
 
 }
