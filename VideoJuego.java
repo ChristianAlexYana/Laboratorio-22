@@ -302,4 +302,58 @@ class CaballeroMoro extends Caballero implements UnidadEspecial {
     public String representar() {
         return "CM";
     }
+class Ejercito {
+    private String reino;
+    private List<Soldado> soldados;
+
+    public Ejercito(String reino) {
+        this.reino = reino;
+        this.soldados = new ArrayList<>();
+    }
+
+    public String getReino() { return reino; }
+    public List<Soldado> getSoldados() { return soldados; }
+
+    public void agregarSoldado(Soldado soldado) {
+        soldados.add(soldado);
+    }
+
+    public void eliminarSoldado(Soldado soldado) {
+        soldados.remove(soldado);
+    }
+
+    public boolean estaVacio() {
+        return soldados.isEmpty();
+    }
+
+    public void mostrarEjercito() {
+        System.out.println("Ejército: " + reino);
+        System.out.println("Cantidad total de soldados: " + soldados.size());
+
+        int espadachines = 0, arqueros = 0, caballeros = 0, lanceros = 0;
+        int espadachinReal = 0, caballeroFranco = 0, espadachinTeutonico = 0, espadachinConquistador = 0, caballeroMoro = 0;
+
+        for (Soldado s : soldados) {
+            if (s instanceof EspadachinReal) espadachinReal++;
+            else if (s instanceof CaballeroFranco) caballeroFranco++;
+            else if (s instanceof EspadachinTeutonico) espadachinTeutonico++;
+            else if (s instanceof EspadachinConquistador) espadachinConquistador++;
+            else if (s instanceof CaballeroMoro) caballeroMoro++;
+            else if (s instanceof Espadachin) espadachines++;
+            else if (s instanceof Arquero) arqueros++;
+            else if (s instanceof Caballero) caballeros++;
+            else if (s instanceof Lancero) lanceros++;
+        }
+
+        System.out.println("Espadachines: " + espadachines);
+        System.out.println("Arqueros: " + arqueros);
+        System.out.println("Caballeros: " + caballeros);
+        System.out.println("Lanceros: " + lanceros);
+        if (espadachinReal > 0) System.out.println("Espadachín Real: " + espadachinReal);
+        if (caballeroFranco > 0) System.out.println("Caballero Franco: " + caballeroFranco);
+        if (espadachinTeutonico > 0) System.out.println("Espadachín Teutónico: " + espadachinTeutonico);
+        if (espadachinConquistador > 0) System.out.println("Espadachín Conquistador: " + espadachinConquistador);
+        if (caballeroMoro > 0) System.out.println("Caballero Moro: " + caballeroMoro);
+        System.out.println();
+    }
 }
