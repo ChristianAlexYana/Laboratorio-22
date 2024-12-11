@@ -1,3 +1,4 @@
+
 import java.util.*;
 abstract class Soldado {
     protected String nombre;
@@ -667,11 +668,13 @@ class Mapa {
         System.out.println();
     }
 }
+
 public class VideoJuego {
     private Ejercito ejercito1;
     private Ejercito ejercito2;
     private Mapa mapa;
     private Scanner scanner;
+
 
     public VideoJuego() {
         scanner = new Scanner(System.in);
@@ -813,7 +816,9 @@ public class VideoJuego {
     }
 
     public static void main(String[] args) {
+
         VideoJuego juego = new VideoJuego();
+
         juego.iniciar();
     }
 }
